@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('https://picsum.photos/1920/1080?random');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.bg-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -2;
+}
+
+
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.clock .horizintal {
+    position: absolute;
+    top: 50%;
+    left: 7.5%;
+    transform: translate(0, -50%);
+    height: 40px;
+    width: 85%;
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0)
+    );
+    z-index: -1;
+    border-radius: 10px;
+}
+
+
+.separator {
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    padding: 0 5px;
+}
+
+.digit {
+    width: 40px;
+    height: 600px;
+    /* Show entire strip (10 * 60px) */
+    overflow: visible;
+    /* <-- KEY: Allow parts above/below to be visible */
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.strip {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.8);
+    border-left: 0.5px solid rgba(255, 255, 255, 0.8);
+    border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+    /* opacity: 0.5; */
+}
+
+.strip span {
+    height: 60px;
+    line-height: 60px;
+    font-size: 2rem;
+    text-align: center;
+}
